@@ -114,7 +114,8 @@ def main():
     top_ids = [r["product_id"] for r in rows[:TOP_N]]
 
     with open(OUTPUT_PATH, "w") as f:
-        f.write(json.dumps(top_ids))
+        for coin_id in top_ids:
+            f.write(f"{coin_id}\n")
 
     print(f"\nSaved {len(top_ids)} pairs to {OUTPUT_PATH}")
     print("Top 10 preview:", top_ids[:10])
