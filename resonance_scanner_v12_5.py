@@ -541,6 +541,7 @@ def build_alert_message_pro(
                 f"(x`{info['vol_ratio']:.2f}`), "
                 f"`${info['usd_per_min']:,.0f}/min`"
             )
+    lines.append(f"**Coinbase**: `https://www.coinbase.com/advanced-trade/spot/{pair}`")
     lines.append(f"**Time**: {datetime.now(timezone.utc).strftime('%H:%M:%S UTC')}")
     return "\n".join(lines)
 
